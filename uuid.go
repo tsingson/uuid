@@ -33,6 +33,7 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
+	"io"
 	"time"
 )
 
@@ -175,6 +176,11 @@ func (u *UUID) SetVariant(v byte) {
 	default:
 		u[8] = (u[8]&(0xff>>3) | (0x07 << 5))
 	}
+}
+
+// interface for github.com/sanity-io/litter
+func (u UUID) LitterDump(w io.Writer) {
+	w.Write([]byte(u.String()))
 }
 
 // Must is a helper that wraps a call to a function returning (UUID, error)
