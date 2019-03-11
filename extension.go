@@ -24,14 +24,14 @@ func (u UUID) LitterDump(w io.Writer) {
 // ExtensionType for uuid
 // Here, we'll pick an arbitrary number between
 // 0 and 127 that isn't already in use
-func (u UUID) ExtensionType() int8 { return 101 }
+func (u *UUID) ExtensionType() int8 { return 101 }
 
 // Len We'll always use 4 bytes to encode the data
-func (u UUID) Len() int { return Size }
+func (u *UUID) Len() int { return Size }
 
 // MarshalBinaryTo simply copies the value
 // of the bytes into 'b'
-func (u UUID) MarshalBinaryTo(b []byte) error {
+func (u *UUID) MarshalBinaryTo(b []byte) error {
 	copy(b, u.Bytes())
 	return nil
 }
