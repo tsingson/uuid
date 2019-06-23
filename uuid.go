@@ -248,5 +248,3 @@ func Must(u UUID, err error) UUID {
 	}
 	return u
 }
-
-
