@@ -81,7 +81,6 @@ func TestFromBytesOrNil(t *testing.T) {
 			t.Errorf("FromBytesOrNil(%x): got %v, want %v", codecTestData, got, codecTestUUID)
 		}
 	})
-
 }
 
 type fromStringTest struct {

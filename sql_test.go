@@ -291,6 +291,7 @@ func testNullUUIDUnmarshalJSONNull(t *testing.T) {
 		t.Fatalf("u.UUID = %v, want %v", u.UUID, Nil)
 	}
 }
+
 func testNullUUIDUnmarshalJSONValid(t *testing.T) {
 	var u NullUUID
 

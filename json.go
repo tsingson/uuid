@@ -16,7 +16,6 @@ Unmarshal(data []byte, v interface{}) error
 
 // MarshalJSON marshals the NullUUID as null or the nested UUID
 func (u *UUID) MarshalJSON() ([]byte, error) {
-
 	return []byte(u.String()), nil
 }
 
